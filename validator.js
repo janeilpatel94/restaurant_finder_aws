@@ -1,4 +1,5 @@
 // ---------------- Helper Functions --------------------------------------------------
+// Inspired by AWS Lambda Blueprints
 
 function elicitSlot(sessionAttributes, intentName, slots, slotToElicit, message) {
     return {
