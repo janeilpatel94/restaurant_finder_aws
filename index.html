@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Chat Box</title>
+	<!-- <script type="text/javascript" src="jquery.js"></script> -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<!-- <link rel="stylesheet" type="text/css" href="Chat.css"> -->
+	<script type="text/javascript" src="Chat.js"></script>
+	<style type="text/css">
+		#chatWindow {
+	width:500px;
+	height:500px;
+	margin: auto;
+	background-color: #d9f1f9;
+	border: 1px solid black;
+}
+#chatWindow > .chatHeader{
+	height:25px;
+	width: auto;
+	background-color: lightgreen;
+	border-bottom: 1px solid black;
+	font-size: 25px;
+	margin: auto;
+    padding: 10px;
+    text-align: center;
+}
+#chatWindow > #messagesWindow{
+	margin:auto;
+	width:100%;
+	height:90%;
+	background-color:#f7fbfc ;
+	overflow: auto;
+}
+
+#leftMessage {
+	display:inline;
+	position: relative;
+	margin: 5px 5px 5px 5px;
+}
+#leftMessage div[class=arrow] {
+  width: 0; 
+  height: 0; 
+  border-top: 5px solid transparent;
+  border-bottom: 10px solid transparent; 
+  border-right:10px solid #f4be6e;
+}
+#leftMessage div[class=reference] {
+	display: inline;
+	color:blue;
+	text-align: left;
+	background-color: #f4be6e;
+	padding: 20px;
+	margin-left: 10px;
+	border-top-left-radius: 10px; 
+	border-bottom-left-radius: 10px; 
+}
+
+#leftMessage div[class=messageText] {
+	display:inline;
+	text-align: left;
+	background-color: #f4be6e;
+	padding: 20px;
+	margin-left: -10px;
+	border-top-right-radius: 10px; 
+	border-bottom-right-radius: 10px; 
+}
+
+
+#rightMessage {
+	display:block;
+	position: relative;
+	margin: 35px 5px 5px 5px;
+	text-align: right;
+}
+#rightMessage div[class=arrow] {
+  width: 0; 
+  height: 0; 
+  border-top: 5px solid transparent;
+  border-bottom: 10px solid transparent;
+  border-left: 10px solid #bfd9f2;
+  margin-left: 99%;
+}
+#rightMessage div[class=reference] {
+	display: inline;
+	color:blue;
+	text-align: left;
+	background-color: #bfd9f2;
+	padding: 20px;
+	margin-left: -10px;
+	margin-right:4px;
+	border-top-right-radius: 10px; 
+	border-bottom-right-radius: 10px; 
+}
+
+#rightMessage div[class=messageText] {
+	display:inline;
+	text-align: left;
+	background-color: #bfd9f2;
+	padding: 20px;
+	/*margin-left: -20px;*/
+	border-top-left-radius: 10px; 
+	border-bottom-left-radius: 10px; 
+}
+#chatWindow > .chatTextBox{
+	background-color: #8d8e8e;
+	border-left: 1px solid black;
+	border-right: 1px solid black;
+	border-bottom: 1px solid black;
+	font-size: 25px;
+    text-align: center;
+}
+input[type=button], input[type=submit], input[type=reset] {
+    margin-left:0px;
+    background-color: #4CAF50;
+    border: none;
+    color: white;
+    padding: 16px 32px;
+    cursor: pointer;
+    width:auto;
+}
+input[type=text] {
+    width: 286px;
+    box-sizing: border-box;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+    background-color: white;
+    background-position: 10px 10px; 
+    background-repeat: no-repeat;
+    padding: 10px 20px 12px 10px;
+}
+input[type=text] + input[type=button]{
+	float:right;
+	height:100%;
+}
+
+#leftMessage div[class=messageText] {
+    display: inline;
+    text-align: left;
+    background-color: #f4be6e;
+    padding: 0px;
+    margin-left: 2px;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+    }
+    
+	</style>
+</head>
+<body background="sign_up_doodle.jpeg">
+	<form action="http://google.com" onSubmit="alert('Bye')" >
+    	<input type="submit" value="Logout"/>	
+	</form>
+	<div id="chatWindow">
+		<div class="chatHeader">
+			Your Chat Window
+		</div>
+		<div id = "messagesWindow">
+			<!-- Contents will be Added here -->
+		</div>
+		
+		<div class="chatTextBox">
+			<input type="text" id="chatmsg">
+			<button id="msgsend">Go!</button>
+			<script type="text/javascript" src="new.js"></script>
+		</div>
+	</div>
+</body>
+</html>
