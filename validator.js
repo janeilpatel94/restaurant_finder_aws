@@ -1,4 +1,5 @@
 // ---------------- Helper Functions --------------------------------------------------
+// Inspired by AWS Lambda Blueprints
 
 function elicitSlot(sessionAttributes, intentName, slots, slotToElicit, message) {
     return {
@@ -57,7 +58,8 @@ function buildValidationResult(isValid, violatedSlot, messageContent) {
 function isValidCity(city) {
     const validCities = ['new york', 'los angeles', 'chicago', 'houston', 'philadelphia', 'phoenix', 'san antonio', 'san diego', 'dallas', 'san jose',
         'austin', 'jacksonville', 'san francisco', 'indianapolis', 'columbus', 'fort worth', 'charlotte', 'detroit', 'el paso', 'seattle', 'denver', 'washington dc',
-        'memphis', 'boston', 'nashville', 'baltimore', 'portland', 'brooklyn', 'bronx', 'queens', 'staten island'];
+        'memphis', 'boston', 'nashville', 'baltimore', 'portland', 'brooklyn', 'bronx', 'queens', 'staten island', 'manhattan',
+         'albany', 'jersey cirt', 'buffalo', 'fulton', 'white plains', 'yonkers'];
     return (validCities.indexOf(city.toLowerCase()) > -1);
 }
 
@@ -74,7 +76,14 @@ function validateOrderDining(cuisine, date, time, city) {
         if (!isValidDate(date)) {
             return buildValidationResult(false, 'DiningDate', 'I did not understand that, what date would you like to dine in?');
         }
-        if (parseLocalDate(date) < new Date().getDate()) {
+        
+        var yearPart = new Date().getFullYear();
+        var monthOfTheYear = new Date().getMonth();
+        var dayOfTheMonth = new Date().getDate();
+
+        var currentDate = new Date(yearPart, monthOfTheYear, dayOfTheMonth);
+        
+        if (parseLocalDate(date) < currentDate) {        
             return buildValidationResult(false, 'DiningDate', 'Your date must be a future date. What day would you like to dine in?');
         }
     }
